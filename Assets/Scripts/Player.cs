@@ -6,12 +6,6 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float force = 10;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
-
     private void Awake()
     {
         this.physical = GetComponent<Rigidbody2D>();
