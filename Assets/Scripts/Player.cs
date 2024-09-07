@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    Rigidbody2D physical;
+    private Rigidbody2D physical;
+    [SerializeField]
+    private float force = 10;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,6 +28,6 @@ public class Player : MonoBehaviour
 
     private void GetUp()
     {
-        this.physical.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
+        this.physical.AddForce(Vector2.up * force, ForceMode2D.Impulse);
     }
 }
