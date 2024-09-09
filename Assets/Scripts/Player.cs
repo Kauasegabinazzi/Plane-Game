@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
 
     private void GetUp()
     {
+        this.physical.linearVelocity = Vector2.zero;
         this.physical.AddForce(Vector2.up * force, ForceMode2D.Impulse);
     }
 }
