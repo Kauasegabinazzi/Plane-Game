@@ -63,8 +63,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Obstacle.cs" />
     <Compile Include="Assets\Scripts\GenereteObstacle.cs" />
+    <Compile Include="Assets\Scripts\Carousel.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\Floor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

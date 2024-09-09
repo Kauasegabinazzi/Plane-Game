@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class Floor : MonoBehaviour
+public class Carousel : MonoBehaviour
 {
     [SerializeField]
     private float speed;
