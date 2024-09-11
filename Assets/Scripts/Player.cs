@@ -6,11 +6,18 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float force = 10;
     private Director diretor;
+    private Vector3 initialPosition;
+
+    private void Start()
+    {
+        diretor = GameObject.FindAnyObjectByType<Director>();
+    }
+
 
     private void Awake()
     {
         this.physical = GetComponent<Rigidbody2D>();
-        diretor = GameObject.FindAnyObjectByType<Director>();
+        initialPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -32,5 +39,11 @@ public class Player : MonoBehaviour
     {
         physical.simulated = false;
         diretor.FinishGame();
+    }
+
+    public void restart()
+    {
+        this.transform.position = initialPosition;
+        this.physical.simulated = true;
     }
 }
