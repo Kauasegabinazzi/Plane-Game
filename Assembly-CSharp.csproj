@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Carousel.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Director.cs" />
+    <Compile Include="Assets\Scripts\Hand.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
