@@ -1,14 +1,17 @@
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Director : MonoBehaviour
 {
     [SerializeField]
     private GameObject imageGameOver;
     private Player player;
+    private Score score;
 
     private void Start()
     {
         player = FindAnyObjectByType<Player>();
+        score = FindAnyObjectByType<Score>();
     }
 
     public void FinishGame()
@@ -23,6 +26,7 @@ public class Director : MonoBehaviour
         Time.timeScale = 1;
         player.restart();
         DestroyAllObstacle();
+        score.Restart();
     }
 
     private void DestroyAllObstacle()

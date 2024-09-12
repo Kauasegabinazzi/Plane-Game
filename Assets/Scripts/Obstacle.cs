@@ -8,6 +8,7 @@ public class Obstacle : MonoBehaviour
     private float variationY;
     private Vector3 playerPosition;
     private bool isScore;
+    private Score score;
 
     private void Awake()
     {
@@ -17,6 +18,7 @@ public class Obstacle : MonoBehaviour
     private void Start()
     {
         playerPosition = FindAnyObjectByType<Player>().transform.position;
+        score = FindAnyObjectByType<Score>();
     }
 
     // Update is called once per frame
@@ -27,6 +29,7 @@ public class Obstacle : MonoBehaviour
         if (!isScore && transform.position.x < playerPosition.x)
         {
             isScore = true;
+            score.AddScore();
         }
     }
 

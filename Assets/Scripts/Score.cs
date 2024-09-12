@@ -1,16 +1,21 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private int score;
+    [SerializeField]
+    private Text text;
+
+    public void AddScore()
     {
-        
+        score++;
+        text.text = score.ToString();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Restart()
     {
-        
+        score = 0;
+        text.text = score.ToString();
     }
 }
