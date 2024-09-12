@@ -6,21 +6,33 @@ public class Obstacle : MonoBehaviour
     private float speed = 0.1f;
     [SerializeField]
     private float variationY;
+    private Vector3 playerPosition;
+    private bool isScore;
 
     private void Awake()
     {
         transform.Translate(Vector3.up * Random.Range(-variationY, variationY));
     }
 
+    private void Start()
+    {
+        playerPosition = FindAnyObjectByType<Player>().transform.position;
+    }
+
     // Update is called once per frame
     private void Update()
     {
         this.transform.Translate(Vector3.left * speed * Time.deltaTime);
+
+        if (!isScore && transform.position.x < playerPosition.x)
+        {
+            isScore = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-      GameObject.Destroy(this.gameObject);  
+        GameObject.Destroy(this.gameObject);
     }
 
     public void DestroyAll()
