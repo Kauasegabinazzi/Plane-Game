@@ -6,11 +6,19 @@ public class Score : MonoBehaviour
     private int score;
     [SerializeField]
     private Text text;
+    [SerializeField]
+    private AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();  
+    }
 
     public void AddScore()
     {
         score++;
         text.text = score.ToString();
+        audioSource.Play();
     }
 
     public void Restart()
