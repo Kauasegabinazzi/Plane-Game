@@ -11,7 +11,7 @@ public class Score : MonoBehaviour
 
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();  
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void AddScore()
@@ -25,5 +25,11 @@ public class Score : MonoBehaviour
     {
         score = 0;
         text.text = score.ToString();
+    }
+
+    public void Save()
+    {
+        PlayerPrefs.SetInt("record", score);
+        Debug.Log(PlayerPrefs.GetInt("record"));
     }
 }

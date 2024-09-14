@@ -18,6 +18,7 @@ public class Director : MonoBehaviour
     {
         Time.timeScale = 0;
         imageGameOver.SetActive(true);
+        score.Save();
     }
 
     public void RestartGame()
