@@ -7,11 +7,13 @@ public class Director : MonoBehaviour
     private GameObject imageGameOver;
     private Player player;
     private Score score;
+    private InterfaceGameOver gameOver;
 
     private void Start()
     {
         player = FindAnyObjectByType<Player>();
         score = FindAnyObjectByType<Score>();
+        gameOver = FindAnyObjectByType<InterfaceGameOver>();
     }
 
     public void FinishGame()
@@ -19,6 +21,7 @@ public class Director : MonoBehaviour
         Time.timeScale = 0;
         imageGameOver.SetActive(true);
         score.Save();
+        gameOver.UpdateInterface();
     }
 
     public void RestartGame()
