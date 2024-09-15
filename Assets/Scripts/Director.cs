@@ -3,8 +3,6 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class Director : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject imageGameOver;
     private Player player;
     private Score score;
     private InterfaceGameOver gameOver;
@@ -19,14 +17,13 @@ public class Director : MonoBehaviour
     public void FinishGame()
     {
         Time.timeScale = 0;
-        imageGameOver.SetActive(true);
         score.Save();
-        gameOver.UpdateInterface();
+        gameOver.ShowInterface();
     }
 
     public void RestartGame()
     {
-        imageGameOver.SetActive(false);
+        gameOver.DisabledInterce();
         Time.timeScale = 1;
         player.restart();
         DestroyAllObstacle();

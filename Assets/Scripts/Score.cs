@@ -29,7 +29,11 @@ public class Score : MonoBehaviour
 
     public void Save()
     {
-        PlayerPrefs.SetInt("record", score);
-        Debug.Log(PlayerPrefs.GetInt("record"));
+        int currentRecord = PlayerPrefs.GetInt("record");
+        if (score > currentRecord)
+        {
+            PlayerPrefs.SetInt("record", score);
+        }
+        
     }
 }
