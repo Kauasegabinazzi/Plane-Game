@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -7,6 +8,7 @@ public class Player : MonoBehaviour
     private float force = 10;
     private Director diretor;
     private Vector3 initialPosition;
+    private bool isUp;
 
     private void Start()
     {
@@ -25,6 +27,14 @@ public class Player : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            isUp = true;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (isUp)
+        {
             this.GetUp();
         }
     }
@@ -33,6 +43,7 @@ public class Player : MonoBehaviour
     {
         this.physical.linearVelocity = Vector2.zero;
         this.physical.AddForce(Vector2.up * force, ForceMode2D.Impulse);
+        isUp = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
