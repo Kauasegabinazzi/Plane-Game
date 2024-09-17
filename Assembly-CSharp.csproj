@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Director.cs" />
     <Compile Include="Assets\Scripts\Hand.cs" />
+    <Compile Include="Assets\Scripts\Difficulty.cs" />
     <Compile Include="Assets\Scripts\InterfaceGameOver.cs" />
   </ItemGroup>
   <ItemGroup>
