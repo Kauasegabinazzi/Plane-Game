@@ -4,14 +4,24 @@ using UnityEngine.Rendering;
 public class GenereteObstacle : MonoBehaviour
 {
     [SerializeField]
-    private float time;
+    private float timeEasy;
+    [SerializeField]
+    private float timeHard;
+
     private float stopwatch;
     [SerializeField]
     private GameObject manual;
 
+    private difficulty dificulty;
+
     private void Awake()
     {
-        stopwatch = time;
+        stopwatch = timeEasy;
+    }
+
+    private void Start()
+    {
+        dificulty = FindAnyObjectByType<difficulty>();
     }
 
     // Update is called once per frame
@@ -23,7 +33,7 @@ public class GenereteObstacle : MonoBehaviour
         {
             GameObject.Instantiate(manual, this.transform.position, Quaternion.identity);
 
-            stopwatch = time;
+            stopwatch = Mathf.Lerp(timeEasy, timeHard, dificulty.dificulty);
         }
     }
 }
