@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Hand.cs" />
     <Compile Include="Assets\Scripts\Difficulty.cs" />
     <Compile Include="Assets\Scripts\InterfaceGameOver.cs" />
+    <Compile Include="Assets\Scripts\SharedVariable.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
