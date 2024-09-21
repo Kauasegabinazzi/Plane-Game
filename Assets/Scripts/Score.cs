@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    private int score;
+    public int Scores { get; private set; }
     [SerializeField]
     private Text text;
     [SerializeField]
@@ -16,24 +16,24 @@ public class Score : MonoBehaviour
 
     public void AddScore()
     {
-        score++;
-        text.text = score.ToString();
+        Scores++;
+        text.text = Scores.ToString();
         audioSource.Play();
     }
 
     public void Restart()
     {
-        score = 0;
-        text.text = score.ToString();
+        Scores = 0;
+        text.text = Scores.ToString();
     }
 
     public void Save()
     {
         int currentRecord = PlayerPrefs.GetInt("record");
-        if (score > currentRecord)
+        if (Scores > currentRecord)
         {
-            PlayerPrefs.SetInt("record", score);
+            PlayerPrefs.SetInt("record", Scores);
         }
-        
+
     }
 }

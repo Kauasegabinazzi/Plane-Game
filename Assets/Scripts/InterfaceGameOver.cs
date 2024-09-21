@@ -7,7 +7,12 @@ public class InterfaceGameOver : MonoBehaviour
     private Text recordValue;
     [SerializeField]
     private GameObject imageGameOver;
+    private Score score;
 
+    private void Start()
+    {
+        score = FindAnyObjectByType<Score>();
+    }
     private void UpdateInterface()
     {
         int record = PlayerPrefs.GetInt("record");
