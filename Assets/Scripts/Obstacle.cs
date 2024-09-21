@@ -3,7 +3,7 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     [SerializeField]
-    private float speed = 0.1f;
+    private SharedVariable speed;
     [SerializeField]
     private float variationY;
     private Vector3 playerPosition;
@@ -24,7 +24,7 @@ public class Obstacle : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        this.transform.Translate(Vector3.left * speed * Time.deltaTime);
+        this.transform.Translate(Vector3.left * speed.value * Time.deltaTime);
 
         if (!isScore && transform.position.x < playerPosition.x)
         {

@@ -1,16 +1,8 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
-public class SharedVariable : MonoBehaviour
+[CreateAssetMenu(fileName = "Shared Variable", menuName = "SharedVariable / Float")]
+public class SharedVariable : ScriptableObject
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public float value;
 }

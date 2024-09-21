@@ -4,7 +4,7 @@ using UnityEngine.Rendering;
 public class Carousel : MonoBehaviour
 {
     [SerializeField]
-    private float speed;
+    private SharedVariable speed;
     private Vector3 startedPositon;
     private float realSize;
 
@@ -22,7 +22,7 @@ public class Carousel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float displacement = Mathf.Repeat(speed * Time.time, realSize);
+        float displacement = Mathf.Repeat(speed.value * Time.time, realSize);
         this.transform.position = startedPositon + Vector3.left * displacement;
     }
 }
