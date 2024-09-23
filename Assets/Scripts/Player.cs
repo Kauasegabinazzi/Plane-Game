@@ -9,10 +9,12 @@ public class Player : MonoBehaviour
     private Director diretor;
     private Vector3 initialPosition;
     private bool isUp;
+    private Animator animator;
 
     private void Start()
     {
         diretor = GameObject.FindAnyObjectByType<Director>();
+        animator = GetComponent<Animator>();
     }
 
 
@@ -29,6 +31,7 @@ public class Player : MonoBehaviour
         {
             isUp = true;
         }
+        animator.SetFloat("speedY", physical.linearVelocity.y);
     }
 
     private void FixedUpdate()
